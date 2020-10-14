@@ -30,6 +30,25 @@
 - 3. 执行构造函数中的代码 => 为新对象添加属性和方法等
 
 - 4. 返回新的对象
+```javascript
+// 1. 创建一个新对象
+var o = {}
+
+// 2. 将新对象的[[Prototype]]指向函数的prototype
+
+o.__proto__ = Person.prototype
+
+// 3. 
+
+```
+
+
+### 手动实现new操作符
+```javascript
+funt
+
+```
+
 
 <hr/>
 
