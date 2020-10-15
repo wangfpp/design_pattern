@@ -6,6 +6,11 @@
 function Person(name, age) {
     this.name = name;
     this.age = age;
+    return new String(111)
+    // return {
+    //     h: 1,
+    //     s: 2
+    // }
 }
 
 function Car(model) {
@@ -25,7 +30,9 @@ Person.prototype.sayName = function() {
     var o = {};
     o.__proto__ = constr.prototype;
     var result = constr.apply(o, args);
-    console.log(o.__proto__, constr, result instanceof Object)
+    console.log(result, o);
+    console.log(result instanceof Object)
+    console.log(o instanceof Object)
     return result instanceof Object ? result : o;
  }
 
@@ -37,6 +44,21 @@ Person.prototype.sayName = function() {
     return result instanceof Object ? result : o;
  }
 
- var wangfpp = myNew(Create, "wangfpp", 30);
+ var wangfpp = myNew(Person, "wangfpp", 30);
+var wangfpp2 = new Person("wangfpp", 30);
 //  wangfpp.sayName();
  console.log(wangfpp)
+ console.log(wangfpp2)
+
+
+/************instanceof new ************/
+ function FackNew() {
+     if (this instanceof FackNew) {
+        console.log(11111);
+     } else {
+        console.log(22222);
+     }
+ }
+
+//  var str1 = FackNew();
+//  var str2 = new FackNew();

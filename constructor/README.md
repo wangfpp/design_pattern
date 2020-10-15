@@ -41,7 +41,21 @@ o.__proto__ = Person.prototype
 // 3. 
 
 ```
+#### new 的理解
+执行构造函数时加new 就会继承构造函数的原型 不加new只是执行了相关代码
+```javascript
+/************instanceof new ************/
+ function FackNew() {
+     if (this instanceof FackNew) {
+        console.log(11111);
+     } else {
+        console.log(22222);
+     }
+ }
 
+//  var str1 = FackNew(); 22222
+//  var str2 = new FackNew(); 11111
+```
 
 ### 手动实现new操作符
 ```javascript
