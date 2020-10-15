@@ -41,14 +41,15 @@ Person.prototype.sayName = function() {
     var self = [].shift.call(arguments);
     o.__proto__ = self.prototype;
     var result = self.apply(o, arguments);
+    console.log(arguments)
     return result instanceof Object ? result : o;
  }
 
- var wangfpp = myNew(Person, "wangfpp", 30);
-var wangfpp2 = new Person("wangfpp", 30);
+ var wangfpp = my_new(Person, "wangfpp", 30);
+// var wangfpp2 = new Person("wangfpp", 30);
 //  wangfpp.sayName();
  console.log(wangfpp)
- console.log(wangfpp2)
+//  console.log(wangfpp2)
 
 
 /************instanceof new ************/

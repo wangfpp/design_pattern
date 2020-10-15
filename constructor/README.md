@@ -38,7 +38,12 @@ var o = {}
 
 o.__proto__ = Person.prototype
 
-// 3. 
+
+// 3. 执行构造函数中的代码 => 为新对象添加属性和方法等
+var result = Person.apply(o, arguments)
+
+// 4. 返回新对象
+return result instanceof Object ? result : o
 
 ```
 #### new 的理解
@@ -59,7 +64,27 @@ o.__proto__ = Person.prototype
 
 ### 手动实现new操作符
 ```javascript
-funt
+funtion myNew() {
+    let o = {}; // 创建新对象
+    let self = [].shift.call(arguments); // 获取构造函数
+    // shift删除数组中开头的一个元素 并返回该元素 会改变原数组
+    let result = o.apply(self, arguments);
+    return result instanceof Object ? result : o;
+    // 改变this指向的方法
+    /**
+     * 一: 改变this同时执行代码
+     * 1. obj.call(this, arg1, arg2) 第一位是原型 后续是参数
+     * 
+     * 2. obj.apply(this, [arg1, arg2, ....]) 第一位时原型 第二位时参数列表
+     * 
+     * 二: 改变this 返回函数
+     * 
+     * 1. obj.bind(this, arg1, arg2, ...)
+     * 
+     */
+    
+
+}
 
 ```
 
