@@ -87,3 +87,6 @@ Person.prototype.constructor === Person
 */
 
 ```
+
+### 查找的资料
+[__proto__ prototype constructor的关系](https://blog.csdn.net/cc18868876837/article/details/81211729)
