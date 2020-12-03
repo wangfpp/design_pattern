@@ -6,11 +6,11 @@
 function Person(name, age) {
     this.name = name;
     this.age = age;
-    return new String(111)
-    // return {
-    //     h: 1,
-    //     s: 2
-    // }
+    // return new String(111)
+    return {
+        h: 1,
+        s: 2
+    }
 }
 
 function Car(model) {

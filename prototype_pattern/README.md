@@ -40,6 +40,17 @@ console.log(wangfpp.sayName === wangfpp2.sayName)
 只要创建了一个新函数就会根据一组特定的对则为该函数创建一个prototype属性,这个属性指向函数的原型对象,默认情况下所有原型对象都会自动获取一个constructor的(构造函数)属性,这个属性是一个指向prototype属性所在的函数指针
 
 - 2. 原型与in操作符
+```javascript
+"name" in person 
+// 不管属性存在与实例上还是原型上　都会返回true
+
+
+person.hasOwnProperty(key)// 只有在实例上的属性才会返回true
+// 判断属性是否存在与原型上 true存在原型上　false存在与实例上
+function hasPrototypeProperty(obj, key) {
+    return !obj.hasOwnProperty(key) (&& key in obj)
+}
+```
 
 
 - 3. 更简单的原型语法
